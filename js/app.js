@@ -62,9 +62,20 @@ function getOperation(operation){
     }
 }
 
-//
-function backspace()
+// take the input var value and remove the last character
+function backspace(){
+    var input_var = document.getElementById('input');
+    var x = input_var.value; //save the value as new variable
+    if(x.lenght > 0){
+        x = x.substring(0, x.lenght-1); //create a substring from 0 to the length -1
+        input_var.value= x; 
+    }
 
+}
+
+//using the eval function take the string and compute
 function compute(){
-
+    var input_var = document.getElementById('input');
+    ans = eval(input_var.value);
+    document.getElementById('answer').value = '=' + ans;
 }
