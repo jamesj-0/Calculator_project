@@ -44,10 +44,26 @@ function clearScreen(){
 //get the mathematical sign
 function getOperation(operation){
     var input_var = document.getElementById('input');
-    switch(operation): 
-     
-    */
+    switch(operation){
+        case '+':
+            input_var.value += '+';
+            break;
+        case '-':
+            input_var.value += '-';
+            break;
+        case '*':
+            input_var.value += '*';
+            break;
+        case '/':
+            input_var.value += '/';
+            break;
+        case '+/-':
+            input_var.value += '-' + input_var.value;
+    }
 }
+
+//
+function backspace()
 
 function compute(){
 
