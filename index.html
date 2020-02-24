@@ -16,14 +16,19 @@
               <td class="title">Calculator</td>
           </tr>
           <td>
-              <input type="text" id="input" placeholder="0">
-              <input type="text" id="answer"> 
+              <input type="text" id="input" placeholder="0" readonly="readonly">
+              <input type="text" id="answer" readonly="readonly" style="color: green;"> 
           </td>
       </tr>
 
       <!-- This is the buttons bit-->
       <tr>
             <td>
+                <input type="button" value=" CE " onclick="clearScreen()">
+                <input type="button" value=" &#247; " onclick="getOperation()">
+                <input type="button" value=" x " onclick="getOperation('*')">
+                <input type="button" value=" &#8592; " onclick="backspace()">
+                <br>
                 <input type="button" value=" 1 " onclick="getNumber(1)">
                 <input type="button" value=" 2 " onclick="getNumber(2)">
                 <input type="button" value=" 3 " onclick="getNumber(3)">
@@ -37,9 +42,11 @@
                 <input type="button" value=" 7 " onclick="getNumber(7)">
                 <input type="button" value=" 8 " onclick="getNumber(8)">
                 <input type="button" value=" 9 " onclick="getNumber(9)">
+                <input type="button" value=" ( ) " onclick="brackets()">
                 <br>
+                <input type="button" value=" +/- " onclick="getOperation('+/-')">
                 <input type="button" value=" 0 " onclick="getNumber(0)">
-                <input type="button" value=" = " onclick="compute()">
+                <input type="button" value=" = " onclick="compute()" style = "width:125px;">
             </td>
 
 
