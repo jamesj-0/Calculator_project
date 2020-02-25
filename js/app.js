@@ -4,7 +4,42 @@ let numDisplay = []
 let computeArr = []
 //boolean to see if the last thing pressed was an operation or number
 let lastPressedOp = false
-var numberVal = 0
+let numberVal = 0
+
+document.onkeydown = function(event) {  
+    switch (event.keyCode) {
+        case 49: //1
+            getNumber(1);
+            break;
+        case 50: //2
+            getNumber(2);
+            break;
+        case 51: //3
+            getNumber(3);
+            break;
+        case 52: //4
+            getNumber(4);
+            break;
+        case 53: //5
+            getNumber(5);
+            break;
+        case 54: //6
+            getNumber(6);
+            break;
+        case 55: //7
+            getNumber(7);
+            break;
+        case 56: //8
+            getNumber(8);
+            break;
+        case 57: //9
+            getNumber(9);
+            break;
+        case 48: //10
+            getNumber(0);
+            break;
+    }
+}
 
 function getNumber(num) {
   numDisplay.push(num)
@@ -24,6 +59,10 @@ function clearScreen() {
   lastPressedOp = false;
 }
 
+function minus(){
+    //if operation pressed is minus and the computeArr is 0 then add a minus and push number val
+}
+
 //get the mathematical sign
 function getOperation(operation) {
   if (!lastPressedOp) {
@@ -32,8 +71,8 @@ function getOperation(operation) {
     computeArr.push(parseFloat(numberVal, 10)) //push number val
     computeArr.push(operation) //push operation
     document.getElementById('display').value = operation
-    console.log(computeArr)
     numDisplay = [] //reset the display num to empty;
+    numberVal = 0;
   }
 }
 
@@ -41,6 +80,7 @@ function getOperation(operation) {
 function compute() {
   //push the last number
   computeArr.push(parseFloat(numberVal, 10))
+  console.log(computeArr)
   var sum = computeArr[0] // sum = first value in the array
   for (var i = 1; i < computeArr.length; i++) {
     if (computeArr[i - 1] == '+') {
@@ -62,16 +102,16 @@ function compute() {
   lastPressedOp = false;
 }
 
-var x = 0
-function brackets() {
-  //when bracket pushed once insert first bracket
-  //when bracket pushed again insert second bracket
-  var input_var = document.getElementById('display')
-  if (x == 0) {
-    input_var.value += '('
-    x = 1
-  } else if (x == 1) {
-    input_var.value += ')'
-    x = 0
-  }
-}
+// var x = 0
+// function brackets() {
+//   //when bracket pushed once insert first bracket
+//   //when bracket pushed again insert second bracket
+//   if (x == 0) {
+//     document.getElementById('display').value = '('
+//     x = 1
+//   } else if (x == 1) {
+//     document.getElementById('display').value = ')'
+//     x = 0
+//   }
+// }
+

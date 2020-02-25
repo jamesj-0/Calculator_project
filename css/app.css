@@ -1,3 +1,8 @@
+
+body{
+  /* font-family: 'Titillium Web' ; */
+}
+
 table {
   width: 205px;
   background: #838383;
@@ -6,6 +11,7 @@ table {
 }
 
 #display {
+  font-family: 'Titillium Web' ;
   width: 202px;
   background: #838383;
   height: 50px;
@@ -22,18 +28,29 @@ input::placeholder {
 }
 
 input[type=button]{
+    font-family: 'Titillium Web' ;
     height: 50px;
     width: 50px;
     font-size: 130%;
-    color: blue;
-    background:white;
+    background:#ECE8E2;
     border-radius: 1px;
     margin-left: 0px;
     margin-right: 1px; float: left;
     margin-top: 1px;
     border: none;
 }
+
 input[type=button]:hover{
-    background: #cbcbcb;
-    cursor: pointer;
-}
+    background: #D2CEC7;
+    cursor: crosshair;  
+  }
+
+  /* I dont think !important is the correct way to overwrite the colour of the operation buttons */
+  .operation{
+    font-family: 'Quicksand'!important;
+    color: white !important;
+    background: #FF9B26 !important; 
+  }
+  .operation:hover{
+    background: #BD731D !important;
+  }
