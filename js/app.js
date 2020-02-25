@@ -1,6 +1,9 @@
 //array to save the number pressed.
 let numDisplay = [];
 
+//array with 3 elements [1, +, 2]
+let computeArr = []; 
+
 //boolean to see if the last thing pressed was an operation or number
 let lastPressedOp = false;
 
@@ -24,22 +27,13 @@ function clearScreen() {
 
 //get the mathematical sign
 function getOperation(operation) {
-    var input_var = document.getElementById('display');
-    switch (operation) {
-        case '+':
-            input_var.value += '+';
-            break;
-        case '-':
-            input_var.value += '-';
-            break;
-        case '*':
-            input_var.value += '*';
-            break;
-        case '/':
-            input_var.value += '/';
-            break;
-        case '+/-':
-            input_var.value += '-' + input_var.value;
+    if(!lastPressedOp){ // if the last thing pressed is not a number then...
+        lastPressedOp = true;
+        computeArr.push(numberVal); //push number val
+        computeArr.push(operation); //push operation
+        document.getElementById('display').value = operation;
+        console.log(computeArr);
+        numDisplay = []; //reset the display num to empty;
     }
 }
 
