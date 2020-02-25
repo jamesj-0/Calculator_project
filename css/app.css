@@ -1,13 +1,14 @@
 
 body{
-  /* font-family: 'Titillium Web' ; */
-}
+background: #cccccc;}
 
 table {
   width: 205px;
-  background: #838383;
+  background: #f7f7f7;
   border: none;
   border-radius: 5px;
+  box-shadow: 0 30px 30px -6px #838383;
+  text-align: center;
 }
 
 #display {
@@ -16,15 +17,15 @@ table {
   background: #838383;
   height: 50px;
   font-size: 210%;
+  color: #f7f7f7;
   text-align: right;
   border: none;
-  color:white;
   margin: 0px, 0px, 0px, 0px;
   border-radius: 2px 2px 2px 2px;
 }
 
 input::placeholder {
-  color:white;
+  color:f7f7f7;
 }
 
 input[type=button]{
