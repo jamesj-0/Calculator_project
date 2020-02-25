@@ -1,12 +1,9 @@
 //array to save the number pressed.
 let numDisplay = []
-
 //array with 3 elements [1, +, 2]
 let computeArr = []
-
 //boolean to see if the last thing pressed was an operation or number
 let lastPressedOp = false
-
 var numberVal = 0
 
 function getNumber(num) {
@@ -19,9 +16,12 @@ function getNumber(num) {
 }
 
 function clearScreen() {
-  //when function called input and answer .value = ""
-  document.getElementById('display').value = ''
-  document.getElementById('answer').value = ''
+  numberVal = 0; // save the sum so more calculations can be done
+  //clear the arrays 
+  document.getElementById('display').value = numberVal;
+  computeArr = [];
+  numDisplay = []; 
+  lastPressedOp = false;
 }
 
 //get the mathematical sign
@@ -41,8 +41,7 @@ function getOperation(operation) {
 function compute() {
   //push the last number
   computeArr.push(parseFloat(numberVal, 10))
-  // console.log(computeArr);
-  var sum = computeArr[0] // the first value in the array
+  var sum = computeArr[0] // sum = first value in the array
   for (var i = 1; i < computeArr.length; i++) {
     if (computeArr[i - 1] == '+') {
       sum = sum + computeArr[i]
@@ -54,7 +53,13 @@ function compute() {
       sum = sum * computeArr[i]
     }
   }
-  console.log(sum)
+  console.log(sum);
+  document.getElementById('display').value = sum;
+  numberVal = sum; // save the sum so more calculations can be done
+  //clear the arrays 
+  computeArr = [];
+  numDisplay = []; 
+  lastPressedOp = false;
 }
 
 var x = 0
